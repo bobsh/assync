@@ -4,12 +4,8 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-setuptools = '*'
-wheel = '*'
-twine = '*'
 
 [packages]
-asyncio-nats-streaming = '>=0.4.0'
+assync = {editable = true,path = "."}
 
 [requires]
-asyncio_python_version = "3.7"

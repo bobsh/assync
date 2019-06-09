@@ -1,3 +1,7 @@
+"""setuptools configuration.
+
+This defines the packaging metadata.
+"""
 import setuptools
 
 with open("README.md", "r") as fh:
@@ -14,8 +18,15 @@ setuptools.setup(
     url="https://github.com/bobsh/assync",
     packages=setuptools.find_packages(),
     classifiers=[
-        "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: Apache License",
+        "Development Status :: 2 - Pre-Alpha",
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: Apache Software License",
         "Operating System :: OS Independent",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.7",
+        "Topic :: Software Development :: Libraries :: Application Frameworks",
+    ],
+    install_requires=[
+        "asyncio-nats-streaming==0.4.0",
     ],
 )
