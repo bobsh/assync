@@ -105,3 +105,6 @@ ENV/
 
 # Pipfile
 Pipefile.lock
+
+# Ignore pytest cache
+.pytest_cache/
