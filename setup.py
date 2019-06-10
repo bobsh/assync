@@ -10,9 +10,8 @@ with open("README.md", "r") as fh:
     LONG_DESCRIPTION = fh.read()
 
 
-datadir = os.path.join('man')
-datafiles = [('share/man/man1',
-             [f for f in glob.glob(os.path.join(datadir, '*'))])]
+DATAFILES = [('share/man/man1',
+              [f for f in glob.glob(os.path.join('man', '*'))])]
 
 setuptools.setup(
     name="assync",
@@ -44,5 +43,5 @@ setuptools.setup(
         "click==7.0",
         "protobuf==3.8.0",
     ],
-    data_files=datafiles,
+    data_files=DATAFILES,
 )

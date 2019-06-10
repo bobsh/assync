@@ -1,6 +1,5 @@
 """Nats streaming server manager."""
 
-import click
 import os
 import time
 import signal
@@ -8,6 +7,7 @@ import sys
 import json
 import subprocess  # nosec
 import http.client
+import click
 
 
 class StanServer:
@@ -76,7 +76,7 @@ class StanServer:
                 click.echo(
                     ("Server listening on port {port} finished running "
                      "already with exit {ret}").format(
-                        port=self.port, ret=self.proc.returncode))
+                         port=self.port, ret=self.proc.returncode))
         else:
             os.kill(self.proc.pid, signal.SIGKILL)
             self.proc.wait()

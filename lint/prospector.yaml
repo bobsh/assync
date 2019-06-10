@@ -1,6 +1,9 @@
 ---
 output-format: pylint
 
+ignore-paths:
+  - build
+
 dodgy:
   run: true
 

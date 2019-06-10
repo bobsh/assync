@@ -8,7 +8,7 @@ bandit-lint: ## Run bandit linting
 
 .PHONY: pylama-lint
 pylama-lint: ## Run pylama linting
-	$(RUN) pylama --options lint/pylama.ini
+	$(PYTHON) -m pylama --options lint/pylama.ini
 
 .PHONY: prospector-lint
 prospector-lint: ## Run prospector linting
