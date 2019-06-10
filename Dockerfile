@@ -13,6 +13,6 @@ RUN make all &&\
 FROM ${from}:${tag} as release
 COPY --from=builder /usr/src/assync/dist/*.whl /root
 WORKDIR /root
-RUN pip3 install --verbose assync*.whl &&\
+RUN pip3 install --no-cache-dir assync*.whl &&\
     rm -f assync*.whl &&\
     asstool
