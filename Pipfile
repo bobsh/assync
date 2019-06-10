@@ -4,8 +4,14 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+setuptools = '==41.0.1'
+pytest = '==4.6.2'
+bandit = '==1.6.0'
+prospector = {extras = ["with_everything"],version = "==1.1.6.2"}
+pylama = '==7.7.1' # Replace: ppep257,pydocstyle,pep8,pycodestyle,pyflakes,pylint,mypy,isort,mccabe
 
 [packages]
 assync = {editable = true,path = "."}
 
 [requires]
+python_version = "3.7"

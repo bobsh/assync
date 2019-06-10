@@ -1,0 +1,24 @@
+output-format: pylint
+
+dodgy:
+  run: true
+
+frosted:
+  run: true
+
+profile-validator:
+  run: true
+
+pyroma:
+  run: true
+
+vulture:
+  run: true
+
+pyflakes: &noRun
+  run: false
+pylint: *noRun
+mccabe: *noRun
+mypy: *noRun
+pep257: *noRun
+pep8: *noRun

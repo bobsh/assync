@@ -2,4 +2,5 @@ SHELL ?= /bin/bash
 CURDIR ?= $(shell basename $(shell pwd))
 HELM_HOME ?= $(shell helm home)
 PYPI_REPO ?= 'https://test.pypi.org/legacy/'
-PYTHON ?= 'pipenv run python3'
+RUN ?= pipenv run
+PYTHON ?= $(RUN) python3

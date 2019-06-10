@@ -2,10 +2,10 @@
 
 This defines the packaging metadata.
 """
-import setuptools
+import setuptools  # type: ignore
 
 with open("README.md", "r") as fh:
-    long_description = fh.read()
+    LONG_DESCRIPTION = fh.read()
 
 setuptools.setup(
     name="assync",
@@ -13,7 +13,7 @@ setuptools.setup(
     author="Nobody",
     author_email="no@one.home",
     description="A small example package",
-    long_description=long_description,
+    long_description=LONG_DESCRIPTION,
     long_description_content_type="text/markdown",
     url="https://github.com/bobsh/assync",
     packages=setuptools.find_packages(),
@@ -26,7 +26,9 @@ setuptools.setup(
         "Programming Language :: Python :: 3.7",
         "Topic :: Software Development :: Libraries :: Application Frameworks",
     ],
+    keywords=['nats'],
     install_requires=[
         "asyncio-nats-streaming==0.4.0",
     ],
+    scripts=['scripts/assync'],
 )

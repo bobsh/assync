@@ -1,6 +1,6 @@
 .PHONY: pipenv-deps
 pipenv-deps: ## Install pipenv dependencies
-	pipenv install --three --skip-lock --verbose
+	pipenv install --dev --three --skip-lock
 
 .PHONY: pipenv-tools
 pipenv-tools: ## Install pipenv-tools
@@ -8,4 +8,5 @@ pipenv-tools: ## Install pipenv-tools
 
 .PHONY: pipenv-clean
 pipenv-clean: ## Clean pipenv
-	pipenv clean --three --verbose
+	pipenv clean --three
+	rm Pipfile.lock

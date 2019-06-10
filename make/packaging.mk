@@ -9,7 +9,7 @@ package-upload: ## Upload distribution packages in /dist to pypi
 .PHONY: package-clean
 package-clean: ## Clean package files
 	rm -rf dist build \
-	  *.egg-info \
+	  assync.egg-info \
 	  .mypy_cache
 
 .PHONY: package-tools
