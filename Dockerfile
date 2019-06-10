@@ -1,13 +1,18 @@
 ARG from='python'
 ARG tag='3.7.3-stretch'
-FROM ${from}:${tag}
 
+
+FROM ${from}:${tag} as builder
 COPY . /usr/src/assync
-
 WORKDIR /usr/src/assync
-
-# Python user path
 ENV PATH=/root/.local/bin:$PATH
+RUN make all &&\
+    asstool
 
-RUN make all && make clean
-RUN asstool
+
+FROM ${from}:${tag} as release
+COPY --from=builder /usr/src/assync/dist/*.whl /root
+WORKDIR /root
+RUN pip3 install --verbose assync*.whl &&\
+    rm -f assync*.whl &&\
+    asstool
