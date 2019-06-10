@@ -2,10 +2,16 @@
 
 This defines the packaging metadata.
 """
+import glob
+import os
 import setuptools  # type: ignore
 
 with open("README.md", "r") as fh:
     LONG_DESCRIPTION = fh.read()
+
+
+DATAFILES = [('share/man/man1',
+              [f for f in glob.glob(os.path.join('man', '*'))])]
 
 setuptools.setup(
     name="assync",
@@ -35,5 +41,7 @@ setuptools.setup(
     install_requires=[
         "asyncio-nats-streaming==0.4.0",
         "click==7.0",
+        "protobuf==3.8.0",
     ],
+    data_files=DATAFILES,
 )

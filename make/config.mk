@@ -1,6 +1,11 @@
+OS ?= $(shell uname -s)
+OS_LC ?= $(shell echo $(OS) | tr A-Z a-z)
 SHELL ?= /bin/bash
 CURDIR ?= $(shell basename $(shell pwd))
 HELM_HOME ?= $(shell helm home)
 PYPI_REPO ?= 'https://test.pypi.org/legacy/'
 RUN ?= pipenv run
 PYTHON ?= $(RUN) python3
+NATS_VERSION ?= v0.15.1
+NATS_BIN ?= $(HOME)/opt/bin/nats-streaming-server
+NATS_DOWNLOAD ?= https://github.com/nats-io/nats-streaming-server/releases/download/$(NATS_VERSION)/nats-streaming-server-$(NATS_VERSION)-$(OS_LC)-amd64.zip
