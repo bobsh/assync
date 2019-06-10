@@ -4,7 +4,7 @@ yamllint-lint: ## Run yamllint linting
 
 .PHONY: bandit-lint
 bandit-lint: ## Run bandit linting
-	$(RUN) bandit -q -r assync/ scripts/
+	$(RUN) bandit -q -r .
 
 .PHONY: pylama-lint
 pylama-lint: ## Run pylama linting
