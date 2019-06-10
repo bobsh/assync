@@ -16,7 +16,7 @@ setuptools.setup(
     long_description=LONG_DESCRIPTION,
     long_description_content_type="text/markdown",
     url="https://github.com/bobsh/assync",
-    packages=setuptools.find_packages(),
+    packages=setuptools.find_packages(exclude=["tests.*", "tests"]),
     classifiers=[
         "Development Status :: 2 - Pre-Alpha",
         "Intended Audience :: Developers",

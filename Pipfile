@@ -5,6 +5,7 @@ verify_ssl = true
 
 [dev-packages]
 bandit = '==1.6.0'
+pdoc3 = '==0.6.2'
 prospector = {extras = ["with_everything"],version = "==1.1.6.2"}
 pylama = '==7.7.1'
 pytest = '==4.6.2'

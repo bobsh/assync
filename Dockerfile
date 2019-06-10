@@ -9,7 +9,5 @@ WORKDIR /usr/src/assync
 # Python user path
 ENV PATH=/root/.local/bin:$PATH
 
-RUN make tools
-RUN make deps
-RUN make lint
-RUN make test
+RUN make all && make clean
+RUN asstool

@@ -1,7 +1,7 @@
 include make/*.mk
 
 .PHONY: all
-all: clean tools deps lint test ## Run clean, tools, deps, lint, test
+all: clean tools deps lint test build install ## Run clean, tools, deps, lint, test, build, install
 
 .PHONY: tools
 tools: pipenv-tools ## Install all tools for development
@@ -14,6 +14,15 @@ lint: yamllint-lint pylama-lint bandit-lint prospector-lint ## Lint all
 
 .PHONY: test
 test: pytest-test ## Run all tests
+
+.PHONY: build
+build: package-build ## Build all
+
+.PHONY: docs
+docs: pdoc3-docs ## Document all
+
+.PHONY: install
+install: package-install ## Install
 
 .PHONY: clean
 clean: package-clean pipenv-clean pytest-clean ## Clean all
