@@ -8,5 +8,4 @@ pipenv-tools: ## Install pipenv-tools
 
 .PHONY: pipenv-clean
 pipenv-clean: ## Clean pipenv
-	pipenv clean --three
-	rm Pipfile.lock
+	rm -f Pipfile.lock

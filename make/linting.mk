@@ -1,3 +1,7 @@
+.PHONY: yamllint-lint
+yamllint-lint: ## Run yamllint linting
+	$(RUN) yamllint -c lint/yamllint.yaml .
+
 .PHONY: bandit-lint
 bandit-lint: ## Run bandit linting
 	$(RUN) bandit -q -r assync/ scripts/
