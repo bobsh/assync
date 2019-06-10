@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.6.2" />
-<title>assync API documentation</title>
-<meta name="description" content="assync module …" />
+<title>assync.cli API documentation</title>
+<meta name="description" content="CLI tools." />
 <link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css' rel='stylesheet'>
 <link href='https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/8.0.0/sanitize.min.css' rel='stylesheet'>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
@@ -17,31 +17,33 @@
 <main>
 <article id="content">
 <header>
-<h1 class="title">Module <code>assync</code></h1>
+<h1 class="title">Module <code>assync.cli</code></h1>
 </header>
 <section id="section-intro">
-<p>assync module.</p>
-<p>A framework for asynchronous messaging.</p>
+<p>CLI tools.</p>
 <details class="source">
 <summary>Source code</summary>
-<pre><code class="python">&#34;&#34;&#34;assync module.
+<pre><code class="python">&#34;&#34;&#34;CLI tools.&#34;&#34;&#34;
 
-A framework for asynchronous messaging.
-&#34;&#34;&#34;</code></pre>
+import click
+from assync.broker import broker
+
+
+@click.group()
+@click.option(&#39;--debug/--no-debug&#39;, default=False)
+def cli(debug):
+    &#34;&#34;&#34;Tool for assync.&#34;&#34;&#34;
+    click.echo(&#39;Debug mode is %s&#39; % (&#39;on&#39; if debug else &#39;off&#39;))
+
+
+cli.add_command(broker)
+
+
+if __name__ == &#34;__main__&#34;:
+    cli()  # pylint: disable=no-value-for-parameter</code></pre>
 </details>
 </section>
 <section>
-<h2 class="section-title" id="header-submodules">Sub-modules</h2>
-<dl>
-<dt><code class="name"><a title="assync.broker" href="broker/index.html">assync.broker</a></code></dt>
-<dd>
-<section class="desc"><p>Broker work.</p></section>
-</dd>
-<dt><code class="name"><a title="assync.cli" href="cli.html">assync.cli</a></code></dt>
-<dd>
-<section class="desc"><p>CLI tools.</p></section>
-</dd>
-</dl>
 </section>
 <section>
 </section>
@@ -56,10 +58,9 @@ A framework for asynchronous messaging.
 <ul></ul>
 </div>
 <ul id="index">
-<li><h3><a href="#header-submodules">Sub-modules</a></h3>
+<li><h3>Super-module</h3>
 <ul>
-<li><code><a title="assync.broker" href="broker/index.html">assync.broker</a></code></li>
-<li><code><a title="assync.cli" href="cli.html">assync.cli</a></code></li>
+<li><code><a title="assync" href="index.html">assync</a></code></li>
 </ul>
 </li>
 </ul>

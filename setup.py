@@ -28,7 +28,7 @@ setuptools.setup(
     ],
     entry_points={
         'console_scripts': [
-            'asstool = assync.tool:cli',
+            'asstool = assync.cli:cli',
         ],
     },
     keywords=['nats'],
