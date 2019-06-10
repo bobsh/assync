@@ -28,11 +28,12 @@ setuptools.setup(
     ],
     entry_points={
         'console_scripts': [
-            'asstool = assync.tool:main',
+            'asstool = assync.cli:cli',
         ],
     },
     keywords=['nats'],
     install_requires=[
         "asyncio-nats-streaming==0.4.0",
+        "click==7.0",
     ],
 )
