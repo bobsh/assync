@@ -108,3 +108,5 @@ Pipefile.lock
 
 # Ignore pytest cache
 .pytest_cache/
+
+man/

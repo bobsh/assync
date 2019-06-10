@@ -27,7 +27,18 @@
 
 
 import click
+from nats.aio.client import Client as NATS
+from stan.aio.client import Client as STAN
 from assync.broker.status import status
+
+
+class Broker:
+    &#34;&#34;&#34;Broker class.&#34;&#34;&#34;
+
+    def __init__(self):
+        &#34;&#34;&#34;Initialize broker handler.&#34;&#34;&#34;
+        self.nc = NATS()
+        self.sc = STAN()
 
 
 @click.group()
@@ -53,6 +64,26 @@ broker.add_command(status)</code></pre>
 <section>
 </section>
 <section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="assync.broker.Broker"><code class="flex name class">
+<span>class <span class="ident">Broker</span></span>
+</code></dt>
+<dd>
+<section class="desc"><p>Broker class.</p>
+<p>Initialize broker handler.</p></section>
+<details class="source">
+<summary>Source code</summary>
+<pre><code class="python">class Broker:
+    &#34;&#34;&#34;Broker class.&#34;&#34;&#34;
+
+    def __init__(self):
+        &#34;&#34;&#34;Initialize broker handler.&#34;&#34;&#34;
+        self.nc = NATS()
+        self.sc = STAN()</code></pre>
+</details>
+</dd>
+</dl>
 </section>
 </article>
 <nav id="sidebar">
@@ -69,6 +100,13 @@ broker.add_command(status)</code></pre>
 <li><h3><a href="#header-submodules">Sub-modules</a></h3>
 <ul>
 <li><code><a title="assync.broker.status" href="status.html">assync.broker.status</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="assync.broker.Broker" href="#assync.broker.Broker">Broker</a></code></h4>
+</li>
 </ul>
 </li>
 </ul>
