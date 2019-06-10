@@ -3,7 +3,7 @@
 
 def main():
     """CLI."""
-    print("Foo")
+    print("Foo bar")
 
 
 if __name__ == "__main__":
