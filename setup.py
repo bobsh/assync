@@ -26,9 +26,13 @@ setuptools.setup(
         "Programming Language :: Python :: 3.7",
         "Topic :: Software Development :: Libraries :: Application Frameworks",
     ],
+    entry_points={
+        'console_scripts': [
+            'asstool = assync.tool:main',
+        ],
+    },
     keywords=['nats'],
     install_requires=[
         "asyncio-nats-streaming==0.4.0",
     ],
-    scripts=['scripts/assync'],
 )

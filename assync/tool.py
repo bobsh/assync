@@ -1,8 +1,9 @@
-#!/usr/bin/env python
+"""CLI tools."""
 
 
 def main():
-    print("assync!")
+    """CLI."""
+    print("Foo")
 
 
 if __name__ == "__main__":
