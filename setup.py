@@ -41,7 +41,7 @@ setuptools.setup(
     install_requires=[
         "asyncio-nats-streaming==0.4.0",
         "click==7.0",
-        "protobuf==3.8.0",
+        "protobuf==3.18.3",
     ],
     data_files=DATAFILES,
 )
